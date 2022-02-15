@@ -9,7 +9,7 @@
         $saldo = $_POST['saldo'];
         $saldo = floatval($saldo);
         $sql = $pdo->prepare("INSERT INTO contas (titular,conta,Agencia,senha,saldo) VALUES (:titular,:conta,:agencia,:senha,:saldo) ");
-        $sql->bindValue(":nome", $titular);
+        $sql->bindValue(":titular", $titular);
         $sql->bindValue(":agencia", $agencia);
         $sql->bindValue(":conta", $conta);
         $sql->bindValue(":senha", md5($senha));
